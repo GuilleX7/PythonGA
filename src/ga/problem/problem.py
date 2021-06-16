@@ -5,7 +5,7 @@ class Problem:
     """
     def __init__(self, genes, individuals_length, decode, fitness):
         """
-        Constructor for the genetic problem.
+        Constructor for the class.
 
         Args:
             genes (list<number>): List of values that are allowed for a gene
