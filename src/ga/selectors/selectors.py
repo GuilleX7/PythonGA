@@ -41,4 +41,5 @@ def tournament_selector(chromosomes, fitness, properties):
             of the problem instance
     """
     cmp = max if properties.optimization_type == "MAX" else min
-    return [cmp(random.sample(chromosomes, k=properties.selection_pressure), key=lambda x: fitness(x)) for _ in range(properties.selection_amount)]
+    fitnessed_chromosomes = [[chromosome, fitness(chromosome)] for chromosome in chromosomes]
+    return [cmp(random.choices(fitnessed_chromosomes, k=properties.selection_pressure), key=lambda x: x[1])[0] for _ in range(properties.selection_amount)]

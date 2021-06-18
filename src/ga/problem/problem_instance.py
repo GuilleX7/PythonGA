@@ -25,7 +25,8 @@ class ProblemInstance:
             properties (ProblemInstanceProperties): Class containing all the properties
                 of the problem instance
             initial_population (list<number>): A list containing individuals for the initial population.
-                If none or an empty list is provided, the population will be initialized randomly
+                If none or an empty list is provided, the population will be initialized randomly.
+                A minimum of 2 individuals are required
         """
         self.problem = problem
         self.mutator = mutator
@@ -47,16 +48,25 @@ class ProblemInstance:
     def create_individual(self):
         return random.choices(self.problem.genes, k=self.problem.individuals_length)
 
-    def run(self):
-        while (self.properties.halting_generations > self.generation_count):
-            self.parents = self.selector(self.parents.copy(), self.problem.fitness, self.properties)
-            self.childs = [self.crossover(c1, c2) for [c1, c2] in [random.choices(self.parents, k=2) for _ in range(self.properties.selection_amount)]]
-            self.childs = [self.mutator(chromosome, self.problem.genes, self.properties) for chromosome in self.childs.copy()]
-            self.parents = self.childs.copy()
-            self.generation_count += 1
+    def is_halted(self):
+        return self.properties.halting_generations <= self.generation_count
+
+    def calculate_next_generation(self):
+        self.parents = self.selector(self.parents, self.problem.fitness, self.properties)
+        self.childs = [self.crossover(c1, c2) for [c1, c2] in [random.choices(self.parents, k=2) for _ in range(self.properties.selection_amount)]]
+        self.childs = [self.mutator(chromosome, self.problem.genes, self.properties) for chromosome in self.childs]
+        self.parents = self.childs.copy()
+        self.generation_count += 1
+
+    def run_until_halt(self):
+        while not self.is_halted():
+            self.calculate_next_generation()
 
     def get_best_individual(self):
         cmp = max if self.properties.optimization_type == "MAX" else min
         return cmp(self.childs, key=lambda x: self.problem.fitness(x))
+
+    def decode_individual(self, individual):
+        return self.problem.decode(individual)
 
 
