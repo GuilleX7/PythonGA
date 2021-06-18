@@ -1,8 +1,8 @@
-import selectors.selectors as selectors
+from problem.problem import Problem
+from problem.problem_instance import ProblemInstance
+from selectors.selectors import roulette_wheel_selector
 
-chromosomes = [[0, 0, 0], [0, 0, 1], [0, 1, 1], [1, 1, 1]]
-fitness = lambda x: sum(x) ** 2
-properties = dict()
-properties["amount"] = 1
-
-print(selectors.roulette_wheel_selector(chromosomes, fitness, properties))
+ga_problem = Problem([0, 1], 5, lambda x: x, lambda x: sum(x) ** 2)
+ga_problem_inst = ProblemInstance(ga_problem, selector=roulette_wheel_selector)
+ga_problem_inst.run()
+print(ga_problem_inst.get_best_individual())
