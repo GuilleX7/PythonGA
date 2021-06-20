@@ -1,0 +1,6 @@
+Experiment 0: knapsacks [17454, 17474, 17435, 17412] with distance to perfection 2104.75
+Experiment 1: knapsacks [17482, 17417, 17474, 17402] with distance to perfection 4836.75
+Experiment 2: knapsacks [17472, 17428, 17440, 17435] with distance to perfection 1136.75
+Experiment 3: knapsacks [17429, 17426, 17480, 17440] with distance to perfection 1860.75
+Experiment 4: knapsacks [17451, 17419, 17455, 17450] with distance to perfection 830.75
+Experiment 5: knapsacks [17453, 17502, 17383, 17437] with distance to perfection 7214.75

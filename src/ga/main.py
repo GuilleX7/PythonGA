@@ -1,4 +1,3 @@
-from math import sin
 from multiknapsack.multiknapsack_problem import MultiknapsackProblem
 from crossovers.crossovers import single_point_crossover, triple_point_crossover, uniform_crossover
 import io
@@ -118,8 +117,15 @@ def launch_second_selection():
         [random.randint(1, 100) for _ in range(num_objects)],
         4,
         [
-            {"selection_amount": 100, "mutation_probability": 0.05, "halting_generations": 100, "crossover": single_point_crossover},
-            {"selection_amount": 300, "mutation_probability": 0.05, "halting_generations": 300, "crossover": triple_point_crossover},
+            # Different crossover
+            {"selection_amount": 500, "mutation_probability": 0.05, "halting_generations": 100, "crossover": single_point_crossover},
+            {"selection_amount": 500, "mutation_probability": 0.05, "halting_generations": 100, "crossover": triple_point_crossover},
+            # Population size vs generations
+            {"selection_amount": 2000, "mutation_probability": 0.05, "halting_generations": 100, "crossover": single_point_crossover},
+            {"selection_amount": 100, "mutation_probability": 0.05, "halting_generations": 2000, "crossover": single_point_crossover},
+            # Mutation probability
+            {"selection_amount": 500, "mutation_probability": 0, "halting_generations": 100, "crossover": single_point_crossover},
+            {"selection_amount": 500, "mutation_probability": 0.2, "halting_generations": 100, "crossover": single_point_crossover}
         ]
     )
 
