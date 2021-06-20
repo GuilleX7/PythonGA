@@ -1,0 +1,11 @@
+Found solution for n=2: knapsacks [3832, 3834] with distance to perfection 2.0
+Found solution for n=3: knapsacks [2553, 2555, 2558] with distance to perfection 12.666666666666666
+Found solution for n=4: knapsacks [1917, 1898, 1928, 1923] with distance to perfection 517.0
+Found solution for n=5: knapsacks [1508, 1549, 1571, 1523, 1515] with distance to perfection 2748.7999999999997
+Found solution for n=6: knapsacks [1252, 1235, 1331, 1289, 1291, 1268] with distance to perfection 5723.333333333333
+Found solution for n=7: knapsacks [1109, 1097, 1078, 1027, 1109, 1137, 1109] with distance to perfection 7268.857142857144
+Found solution for n=8: knapsacks [963, 953, 923, 949, 990, 975, 935, 978] with distance to perfection 3597.5
+Found solution for n=9: knapsacks [879, 864, 822, 894, 828, 806, 878, 818, 877] with distance to perfection 8685.555555555555
+Found solution for n=10: knapsacks [792, 761, 765, 780, 757, 764, 702, 765, 798, 782] with distance to perfection 6356.399999999999
+=============================
+BEST solution is n=2
