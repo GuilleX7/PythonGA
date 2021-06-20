@@ -1,6 +1,0 @@
-Experiment 0: knapsacks [12894, 12930, 12823, 12900] with distance to perfection 6162.75
-Experiment 1: knapsacks [12822, 12867, 12923, 12935] with distance to perfection 8224.75
-Experiment 2: knapsacks [12885, 12876, 12937, 12849] with distance to perfection 4068.75
-Experiment 3: knapsacks [12894, 12919, 12865, 12869] with distance to perfection 1880.75
-Experiment 4: knapsacks [12903, 12909, 12841, 12894] with distance to perfection 2904.75
-Experiment 5: knapsacks [12767, 12874, 12960, 12946] with distance to perfection 23378.75
