@@ -1,0 +1,6 @@
+Experiment 0: knapsacks [301, 300, 299, 300] with distance to perfection 2.0
+Experiment 1: knapsacks [301, 299, 300, 300] with distance to perfection 2.0
+Experiment 2: knapsacks [300, 300, 300, 300] with distance to perfection 0.0
+Experiment 3: knapsacks [300, 300, 300, 300] with distance to perfection 0.0
+Experiment 4: knapsacks [300, 300, 300, 300] with distance to perfection 0.0
+Experiment 5: knapsacks [298, 303, 301, 298] with distance to perfection 18.0
